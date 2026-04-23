@@ -1,0 +1,2672 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muskatnuss Der Photo   Real Estate Photography</title>
+  <meta name="description" content="Studio fotografi properti profesional di Boyolali, melayani area Solo Raya. HDR real estate photography untuk listing properti dan marketing material.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #080808;
+      --bg2:      #0d0d0d;
+      --bg3:      #111111;
+      --card:     #161616;
+      --gold:     #C9A84C;
+      --gold-l:   #E2C570;
+      --gold-d:   #8A6A28;
+      --white:    #F5EFE4;
+      --muted:    #6A5F52;
+      --border:   rgba(201,168,76,0.18);
+      --border2:  rgba(255,255,255,0.07);
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    /* Grain */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9998;
+      opacity: 0.028;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* ---- TYPOGRAPHY ---- */
+    h1,h2,h3,h4 { font-family:'Cormorant Garamond',serif; font-weight:300; letter-spacing:0.01em; }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    em { color: var(--gold); font-style: italic; }
+
+    .gold-rule {
+      width: 0; height: 1px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 1.4rem 0;
+      transition: width 0.8s ease;
+    }
+    .gold-rule.grown { width: 48px; }
+
+    .hero-eyebrow-short { display: none; }
+    .hero-eyebrow-full  { display: inline-block; }
+
+    /* ---- NAV ---- */
+    #nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 500;
+      padding: 1.6rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: padding 0.4s, background 0.4s, border 0.4s;
+    }
+    #nav.stuck {
+      padding: 1rem 4rem;
+      background: rgba(8,8,8,0.92);
+      backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      color: var(--white);
+    }
+    .nav-brand span { color: var(--gold); }
+    .nav-links { display:flex; gap:2.5rem; list-style:none; }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.25s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links .cta-link {
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 0.5rem 1.4rem;
+      transition: background 0.25s, color 0.25s !important;
+    }
+    .nav-links .cta-link:hover {
+      background: var(--gold);
+      color: var(--bg) !important;
+    }
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--white);
+      transition: all 0.3s;
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(8,8,8,0.98);
+      z-index: 499;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .mobile-menu a:hover { color: var(--gold); }
+
+    /* ---- HERO ---- */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center 30%;
+      transform: scale(1.06);
+      transition: transform 10s ease-out;
+    }
+    .hero-bg.pan { transform: scale(1); }
+    .hero-vignette {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(8,8,8,1) 0%, rgba(8,8,8,0.55) 35%, rgba(8,8,8,0.1) 70%),
+        linear-gradient(to right, rgba(8,8,8,0.4) 0%, transparent 60%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 4rem 7rem;
+      max-width: 1100px;
+    }
+    .hero-content .eyebrow { animation: fadeUp 0.9s 0.2s both; }
+    .hero-h1 {
+      font-size: clamp(3.8rem, 9vw, 7.5rem);
+      line-height: 0.95;
+      margin: 1.2rem 0 1.8rem;
+      animation: fadeUp 1s 0.4s both;
+    }
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 460px;
+      margin-bottom: 2.8rem;
+      animation: fadeUp 0.9s 0.6s both;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.9s 0.8s both;
+    }
+    .hero-scroll {
+      position: absolute;
+      right: 3rem;
+      bottom: 3rem;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      animation: fadeUp 0.9s 1.1s both;
+    }
+    .hero-scroll-label {
+      writing-mode: vertical-rl;
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .hero-scroll-line {
+      width: 1px;
+      height: 56px;
+      background: linear-gradient(to bottom, var(--gold) 0%, transparent 100%);
+      animation: pulse-line 2.2s ease-in-out infinite;
+    }
+    @keyframes pulse-line {
+      0%,100% { opacity:0.3; transform: scaleY(0.9); }
+      50% { opacity:1; transform: scaleY(1.15); }
+    }
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(28px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* ---- BUTTONS ---- */
+    .btn-gold {
+      padding: 0.85rem 2.4rem;
+      background: var(--gold);
+      color: var(--bg);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .btn-gold:hover { background: var(--gold-l); transform: translateY(-1px); }
+    .btn-ghost {
+      padding: 0.85rem 2.4rem;
+      background: transparent;
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: border-color 0.25s, color 0.25s;
+    }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ---- SECTION WRAPPER ---- */
+    .section { padding: 7rem 4rem; }
+    .section-sm { padding: 5rem 4rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .container-wide { max-width: 1400px; margin: 0 auto; }
+
+    /* ---- REVEAL ---- */
+    .r {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .r.in { opacity:1; transform:translateY(0); }
+    .r2 { transition-delay: 0.1s; }
+    .r3 { transition-delay: 0.2s; }
+    .r4 { transition-delay: 0.3s; }
+
+    /* ---- ABOUT ---- */
+    #about { background: var(--bg2); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+    .about-img-frame {
+      position: relative;
+    }
+    .about-img-frame img {
+      width: 100%;
+      height: 580px;
+      object-fit: cover;
+      display: block;
+    }
+    .about-accent-border {
+      position: absolute;
+      top: -1.2rem;
+      left: -1.2rem;
+      width: 55%;
+      height: 55%;
+      border: 1px solid var(--border);
+      pointer-events: none;
+    }
+    .about-badge {
+      position: absolute;
+      bottom: 2.5rem;
+      right: -2rem;
+      background: var(--gold);
+      color: var(--bg);
+      padding: 1.4rem 1.8rem;
+      text-align: center;
+      min-width: 120px;
+    }
+    .about-badge-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      display: block;
+      line-height: 1;
+    }
+    .about-badge-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      display: block;
+      margin-top: 0.3rem;
+    }
+    .about-text h2 { font-size: clamp(2.2rem,4vw,3.8rem); margin: 0.5rem 0 0; }
+    .about-text p { color: var(--muted); font-size: 0.92rem; margin-bottom: 1.2rem; }
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 1.5rem;
+      padding-top: 2.5rem;
+      margin-top: 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+    }
+    .stat-desc {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-top: 0.3rem;
+    }
+
+    /* ---- HDR TECHNIQUE ---- */
+    #technique { background: var(--bg); text-align: center; }
+    .technique-header { max-width: 580px; margin: 0 auto 3.5rem; }
+    .technique-header h2 { font-size: clamp(2.5rem,5vw,4.2rem); margin-top: 0.5rem; }
+    .technique-header .gold-rule { margin: 1.2rem auto; }
+
+    .hdr-wrap {
+      position: relative;
+      max-width: 980px;
+      margin: 0 auto;
+      border-radius: 3px;
+      overflow: hidden;
+      cursor: col-resize;
+      user-select: none;
+      box-shadow: 0 50px 120px rgba(0,0,0,0.75), 0 0 0 1px var(--border);
+    }
+    .hdr-after-img {
+      width: 100%;
+      display: block;
+    }
+    .hdr-before-pane {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      clip-path: inset(0 60% 0 0);
+    }
+    .hdr-before-pane img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(1) brightness(0.38) contrast(1.1);
+    }
+    .hdr-divider {
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 40%;
+      width: 2px;
+      background: var(--gold);
+      pointer-events: none;
+      transition: none;
+    }
+    .hdr-knob {
+      position: absolute;
+      top: 50%;
+      left: 40%;
+      transform: translate(-50%, -50%);
+      width: 44px; height: 44px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      box-shadow: 0 0 0 6px rgba(201,168,76,0.25);
+      font-size: 1.1rem;
+      color: var(--bg);
+      font-weight: 700;
+    }
+    .hdr-tag {
+      position: absolute;
+      bottom: 1.5rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.9rem;
+    }
+    .hdr-tag-before { left: 1.5rem; background: rgba(0,0,0,0.65); color: #ccc; }
+    .hdr-tag-after  { right: 1.5rem; background: var(--gold); color: var(--bg); }
+    .technique-caption {
+      margin-top: 1.4rem;
+      font-size: 0.83rem;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    /* ---- SERVICES ---- */
+    #services { background: var(--bg2); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      margin-top: 3.5rem;
+      gap: 1px;
+      background: var(--border2);
+    }
+    .svc-card {
+      background: var(--bg2);
+      padding: 2.8rem 2.2rem;
+      border-bottom: 1px solid var(--border2);
+    }
+    .svc-icon {
+      width: 40px; height: 40px;
+      margin-bottom: 1.4rem;
+      color: var(--gold);
+    }
+    .svc-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.8rem;
+    }
+    .svc-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.85; }
+
+    /* ---- PRICING ---- */
+    #pricing { background: var(--bg3); }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .pricing-text h2 { font-size: clamp(2rem,3.5vw,3.2rem); margin-top: 0.5rem; }
+    .promo-pill {
+      display: inline-block;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid var(--border);
+      color: var(--gold);
+      padding: 0.35rem 1rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+    .pricing-note { color: var(--muted); font-size: 0.9rem; line-height: 1.9; }
+    .pricing-note strong { color: var(--white); }
+    .pricing-note .hl { color: var(--gold); font-weight: 500; }
+
+    /* Calculator */
+    .calc-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+    }
+    .calc-box-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      margin-bottom: 1.8rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid var(--border2);
+    }
+    .calc-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border2);
+    }
+    .calc-row:last-of-type { border-bottom: none; }
+    .calc-label { font-size: 0.8rem; color: var(--muted); }
+    .counter {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .counter-btn {
+      width: 30px; height: 30px;
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--white);
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, color 0.2s;
+      line-height: 1;
+    }
+    .counter-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .counter-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      min-width: 2rem;
+      text-align: center;
+      line-height: 1;
+    }
+    .order-tabs {
+      display: flex;
+      gap: 0.4rem;
+    }
+    .order-tab {
+      padding: 0.4rem 0.85rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      border: 1px solid var(--border);
+      background: none;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .order-tab.on {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--bg);
+    }
+    .calc-result {
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      background: rgba(201,168,76,0.05);
+      border: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .result-left-title { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+    .discount-chip {
+      display: inline-block;
+      margin-top: 0.4rem;
+      background: #163016;
+      color: #4caf50;
+      padding: 0.2rem 0.55rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .result-total { font-family:'Cormorant Garamond',serif; font-size: 2.1rem; color: var(--gold); }
+    .result-orig { font-size: 0.8rem; color: var(--muted); text-decoration: line-through; margin-left: 0.5rem; vertical-align: middle; }
+    .result-per { font-size: 0.72rem; color: var(--muted); margin-top: 0.2rem; }
+    .calc-footnote { font-size: 0.72rem; color: var(--muted); margin-top: 0.8rem; }
+
+    /* ---- GALLERY ---- */
+    #gallery { background: var(--bg); }
+    .gallery-intro {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 2.5rem;
+    }
+    .gallery-hint { font-size: 0.75rem; color: var(--muted); }
+    .gallery-masonry {
+      columns: 3;
+      column-gap: 6px;
+    }
+    .gal-item {
+      break-inside: avoid;
+      margin-bottom: 6px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+    .gal-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .gal-item:hover img { transform: scale(1.06); }
+    .gal-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(8,8,8,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .gal-item:hover .gal-overlay { opacity: 1; }
+    .gal-zoom {
+      width: 46px; height: 46px;
+      border: 1px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 1.3rem;
+    }
+    /* Lightbox */
+    #lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.96);
+      z-index: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    #lightbox.open { opacity: 1; pointer-events: all; }
+    #lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      box-shadow: 0 0 60px rgba(0,0,0,0.8);
+    }
+    .lb-close {
+      position: absolute;
+      top: 1.5rem; right: 1.5rem;
+      width: 42px; height: 42px;
+      background: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--white);
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .lb-close:hover { border-color: var(--gold); color: var(--gold); }
+    .lb-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--white);
+      width: 44px; height: 64px;
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .lb-nav:hover { background: rgba(201,168,76,0.15); border-color: var(--gold); }
+    #lb-prev { left: 1.5rem; }
+    #lb-next { right: 1.5rem; }
+
+    /* ---- ORDER / CONTACT ---- */
+    #order { background: var(--bg2); }
+    .order-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 6rem;
+      align-items: start;
+    }
+    .order-info h2 { font-size: clamp(2rem,3.5vw,3rem); margin-top: 0.5rem; }
+    .order-info p { color: var(--muted); font-size: 0.9rem; margin-top: 1rem; }
+    .contacts { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.4rem; }
+    .contact-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .contact-ico {
+      width: 38px; height: 38px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .contact-detail span {
+      display: block;
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .contact-detail a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .contact-detail a:hover { color: var(--gold); }
+    /* Form */
+    .order-form { display: flex; flex-direction: column; gap: 1.1rem; }
+    .fg { display: flex; flex-direction: column; gap: 0.4rem; }
+    .fg label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+    .fg input, .fg select, .fg textarea {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--white);
+      padding: 0.85rem 1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      outline: none;
+      width: 100%;
+      transition: border-color 0.2s;
+      appearance: none;
+    }
+    .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--gold); }
+    .fg select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236A5F52' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+    .fg select option { background: #1a1a1a; }
+    .fg textarea { resize: vertical; min-height: 90px; }
+    .fg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .first-check {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 1rem 1.1rem;
+      background: rgba(201,168,76,0.05);
+      border: 1px solid var(--border);
+    }
+    .first-check input[type=checkbox] {
+      width: 17px; height: 17px;
+      accent-color: var(--gold);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .first-check label { font-size: 0.82rem; color: var(--white); cursor: pointer; line-height: 1.4; }
+    .wa-submit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      width: 100%;
+      padding: 1rem;
+      background: #1DA851;
+      color: #fff;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .wa-submit:hover { background: #17a347; transform: translateY(-1px); }
+
+    /* ---- FOOTER ---- */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .foot-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--white);
+    }
+    .foot-brand span { color: var(--gold); }
+    footer p { font-size: 0.72rem; color: var(--muted); }
+    .foot-wa {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #25D366;
+      font-size: 0.72rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .foot-wa:hover { color: #1ebe5b; }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 1024px) {
+      #nav { padding: 1.4rem 2rem; }
+      #nav.stuck { padding: 0.9rem 2rem; }
+      .nav-links { gap: 1.6rem; }
+      .section, .section-sm { padding: 5rem 2rem; }
+      .about-grid { gap: 3rem; }
+      .pricing-grid { gap: 3rem; }
+      .order-grid { gap: 3rem; }
+    }
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      /* Push hero content clear of fixed nav (~70px) */
+      .hero-content { padding: 7rem 1.5rem 5rem; }
+      .hero-scroll { right: 1.5rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-badge { right: 0; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .gallery-masonry { columns: 2; }
+      .order-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+      .fg-row { grid-template-columns: 1fr; }
+      /* Swap hero eyebrow to shorter version on mobile */
+      .hero-eyebrow-full  { display: none; }
+      .hero-eyebrow-short { display: inline-block; }
+      /* Hide scroll indicator on mobile — not needed */
+      .hero-scroll { display: none; }
+      /* Parallax off on mobile (causes jank) */
+      #heroBg { transform: none !important; }
+      /* Force GPU layers for all animated elements on mobile */
+      .hero-particle, .spark, .twinkle,
+      .svc-icon svg, .proc-num, .about-badge,
+      .hdr-knob, .gold-rule, .eyebrow,
+      .hero-scroll-line, .hero-scroll-label {
+        will-change: transform, opacity;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+      }
+      /* Ensure all continuous animations run on mobile */
+      .svc-icon svg        { animation: icon-float   3.5s ease-in-out infinite !important; }
+      .about-badge         { animation: badge-float  4s   ease-in-out infinite !important; }
+      .hdr-knob            { animation: knob-bob     2.5s ease-in-out infinite !important; }
+      .hero-scroll-label   { animation: label-fade   2.2s ease-in-out infinite !important; }
+      .hero-vignette       { animation: vignette-drift 8s ease-in-out infinite !important; }
+      .eyebrow             { animation: eyebrow-glow 5s   ease-in-out infinite !important; }
+      .btn-ghost           { animation: ghost-border-pulse 4s ease-in-out infinite !important; }
+      .gold-rule.grown     { animation: rule-shimmer 4s   linear      infinite !important; }
+    }
+    @media (max-width: 560px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .gallery-masonry { columns: 1; }
+      .hero-h1 { font-size: 2.9rem; }
+      .hero-btns { flex-direction: column; }
+      .proc-step { gap: 1rem; }
+      .faq-wrap { gap: 1.5rem; }
+      .calc-box { padding: 1.5rem; }
+    }
+
+    /* ---- PROCESS ---- */
+    #process { background: var(--bg3); overflow: hidden; }
+    .process-header { text-align: center; max-width: 580px; margin: 0 auto 4rem; }
+    .process-header h2 { font-size: clamp(2.2rem,4vw,3.8rem); margin-top: 0.5rem; }
+    .process-header .gold-rule { margin: 1.2rem auto; }
+    .process-track {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .process-track::before {
+      content: '';
+      position: absolute;
+      left: 26px;
+      top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--gold-d) 10%, var(--gold-d) 90%, transparent);
+    }
+    .proc-step {
+      display: flex;
+      gap: 2rem;
+      padding: 2rem 0;
+      position: relative;
+    }
+    .proc-num {
+      width: 54px;
+      height: 54px;
+      flex-shrink: 0;
+      border: 1px solid var(--gold-d);
+      background: var(--bg3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--gold);
+      position: relative;
+      z-index: 1;
+    }
+    .proc-body { padding-top: 0.6rem; }
+    .proc-body h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .proc-body p { font-size: 0.85rem; color: var(--muted); line-height: 1.85; }
+    .proc-tag {
+      display: inline-block;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--border);
+      padding: 0.2rem 0.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ---- TESTIMONIALS ---- */
+    #testimonials { background: var(--bg2); }
+    .testi-header { text-align: center; max-width: 500px; margin: 0 auto 3.5rem; }
+    .testi-header h2 { font-size: clamp(2.2rem,4vw,3.8rem); margin-top: 0.5rem; }
+    .testi-header .gold-rule { margin: 1.2rem auto; }
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border2);
+    }
+    .testi-card {
+      background: var(--bg2);
+      padding: 2.2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .testi-stars { color: var(--gold); font-size: 0.85rem; letter-spacing: 2px; }
+    .testi-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.08rem;
+      font-style: italic;
+      line-height: 1.75;
+      color: var(--white);
+      flex: 1;
+    }
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border2);
+    }
+    .testi-avatar {
+      width: 38px; height: 38px;
+      background: var(--gold-d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--gold-l);
+      flex-shrink: 0;
+    }
+    .testi-name { font-size: 0.82rem; font-weight: 500; }
+    .testi-meta { font-size: 0.68rem; color: var(--muted); }
+    .testi-empty {
+      background: var(--bg2);
+      border: 1px dashed rgba(201,168,76,0.15);
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 0.8rem;
+      min-height: 200px;
+    }
+    .testi-empty-icon { font-size: 1.8rem; opacity: 0.4; }
+    .testi-empty p { font-size: 0.78rem; color: var(--muted); line-height: 1.7; }
+    .testi-cta {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .testi-cta p { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.2rem; }
+
+    /* ---- FAQ ---- */
+    #faq { background: var(--bg); }
+    .faq-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 6rem;
+      align-items: start;
+    }
+    .faq-left h2 { font-size: clamp(2.2rem,4vw,3.8rem); margin-top: 0.5rem; }
+    .faq-left p { color: var(--muted); font-size: 0.88rem; margin-top: 1.2rem; }
+    .faq-list { display: flex; flex-direction: column; gap: 0; }
+    .faq-item {
+      border-bottom: 1px solid var(--border2);
+    }
+    .faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.3rem 0;
+      cursor: pointer;
+      gap: 1rem;
+      user-select: none;
+    }
+    .faq-q-text { font-size: 0.92rem; font-weight: 400; line-height: 1.5; }
+    .faq-icon {
+      width: 26px; height: 26px;
+      border: 1px solid var(--border);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 1rem;
+      transition: transform 0.3s, background 0.2s;
+      line-height: 1;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: rgba(201,168,76,0.1); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s;
+    }
+    .faq-a-inner { padding-bottom: 1.2rem; font-size: 0.85rem; color: var(--muted); line-height: 1.85; }
+    .faq-a-inner strong { color: var(--white); }
+    .faq-a-inner .pill {
+      display: inline-block;
+      background: rgba(201,168,76,0.08);
+      border: 1px solid var(--border);
+      color: var(--gold);
+      padding: 0.15rem 0.55rem;
+      font-size: 0.72rem;
+    }
+    .faq-item.open .faq-a { max-height: 400px; }
+
+    /* ---- FLOATING WA ---- */
+    .wa-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 400;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.6rem;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .wa-float.hide-float {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+    }
+    .wa-float-bubble {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--white);
+      font-size: 0.78rem;
+      padding: 0.55rem 1rem;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(10px);
+      transition: opacity 0.3s, transform 0.3s;
+      pointer-events: none;
+    }
+    .wa-float:hover .wa-float-bubble {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .wa-float-btn {
+      width: 56px; height: 56px;
+      background: #1DA851;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 32px rgba(29,168,81,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: wa-pulse 3s ease-in-out infinite;
+    }
+    .wa-float-btn:hover { transform: scale(1.1); box-shadow: 0 12px 40px rgba(29,168,81,0.55); }
+    @keyframes wa-pulse {
+      0%,100% { box-shadow: 0 8px 32px rgba(29,168,81,0.4); }
+      50% { box-shadow: 0 8px 48px rgba(29,168,81,0.65); }
+    }
+
+
+
+    /* ---- RESPONSIVE for new sections ---- */
+    @media (max-width: 860px) {
+      .testi-grid { grid-template-columns: 1fr; }
+      .faq-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+      .process-track::before { left: 22px; }
+      .proc-num { width: 46px; height: 46px; }
+    }
+    @media (max-width: 560px) {
+      .testi-grid { grid-template-columns: 1fr; }
+    }
+
+
+    /* ════════════════════════════
+       ANIMATIONS
+    ════════════════════════════ */
+
+    /* Shimmer sweep on gold text */
+    @keyframes gold-shimmer {
+      0%   { background-position:  200% center; }
+      100% { background-position: -200% center; }
+    }
+    .hero-h1 em {
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-l) 40%, #fff8e1 50%, var(--gold-l) 60%, var(--gold) 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gold-shimmer 4s linear infinite;
+    }
+
+    /* Floating cards on hover */
+    .svc-card {
+      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+      border: 1px solid transparent;
+    }
+    .svc-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+    }
+    .svc-icon svg {
+      transition: transform 0.4s ease;
+    }
+    .svc-card:hover .svc-icon svg {
+      transform: scale(1.18) rotate(-4deg);
+    }
+
+    /* Gallery item lift */
+    .gal-item {
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .gal-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      z-index: 2;
+    }
+
+    /* Stat counter pulse on enter */
+    @keyframes stat-pop {
+      0%   { transform: scale(0.7); opacity: 0; }
+      70%  { transform: scale(1.1); }
+      100% { transform: scale(1);   opacity: 1; }
+    }
+    .stat-num.popped {
+      animation: stat-pop 0.55s cubic-bezier(.22,1,.36,1) forwards;
+    }
+
+    /* Gold rule grows in on scroll — base rule is in main CSS above */
+
+    /* Process step left-slide — extends base .proc-step */
+    .proc-step {
+      opacity: 0;
+      transform: translateX(-28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .proc-step.in {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* FAQ item shimmer border on open */
+    .faq-item.open {
+      border-bottom-color: rgba(201,168,76,0.35);
+    }
+    .faq-q-text {
+      transition: color 0.25s;
+    }
+    .faq-item.open .faq-q-text {
+      color: var(--gold-l);
+    }
+
+    /* Pricing calc box glow on interact */
+    .calc-box {
+      transition: box-shadow 0.4s ease;
+    }
+    .calc-box:focus-within {
+      box-shadow: 0 0 0 1px var(--gold-d), 0 24px 60px rgba(201,168,76,0.08);
+    }
+
+    /* CTA button shimmer */
+    .btn-gold {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-gold::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+      transform: skewX(-20deg);
+      transition: none;
+    }
+    .btn-gold:hover::after {
+      animation: btn-shine 0.55s ease forwards;
+    }
+    @keyframes btn-shine {
+      to { left: 160%; }
+    }
+
+    /* Eyebrow tag fade+slide combo */
+    .eyebrow {
+      display: inline-block;
+      position: relative;
+    }
+    .eyebrow::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -3px;
+      width: 0; height: 1px;
+      background: var(--gold);
+      transition: width 0.5s ease 0.3s;
+    }
+    .r.in .eyebrow::after,
+    .eyebrow.grown::after {
+      width: 100%;
+    }
+
+    /* Smooth image zoom on about frame */
+    .about-img-frame img {
+      transition: transform 0.8s ease;
+    }
+    .about-img-frame:hover img {
+      transform: scale(1.03);
+    }
+
+    /* Nav link underline slide */
+    .nav-links a:not(.cta-link) {
+      position: relative;
+    }
+    .nav-links a:not(.cta-link)::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 1px;
+      background: var(--gold);
+      transition: width 0.25s ease;
+    }
+    .nav-links a:not(.cta-link):hover::after {
+      width: 100%;
+    }
+
+    /* Scroll-triggered number count */
+    .stat-num[data-target] {
+      display: block;
+    }
+
+    /* ── PARALLAX HERO BG ── */
+    #hero { perspective: 1px; }
+
+    /* ── ACCENT BORDER DRAW ── */
+    .about-accent-border {
+      width: 0; height: 0;
+      border: none;
+      border-top: 1px solid transparent;
+      border-left: 1px solid transparent;
+      transition: width 0.7s ease 0.2s, height 0.7s ease 0.9s, border-color 0.1s ease 0.2s;
+    }
+    .about-img-frame:hover .about-accent-border,
+    .about-img-frame .about-accent-border.drawn {
+      border-color: var(--border);
+      width: 55%; height: 55%;
+    }
+
+    /* proc-num glow handled by proc-breathe below */
+
+    /* ── CONTACT ROW HOVER ── */
+    .contact-row {
+      transition: transform 0.25s ease;
+    }
+    .contact-row:hover {
+      transform: translateX(6px);
+    }
+    .contact-ico {
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .contact-row:hover .contact-ico {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.08);
+    }
+
+    /* ── FORM INPUT FOCUS LINE ── */
+    .fg {
+      position: relative;
+    }
+    .fg input, .fg select, .fg textarea {
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .fg input:focus, .fg select:focus, .fg textarea:focus {
+      box-shadow: 0 2px 0 0 var(--gold-d);
+    }
+
+    /* ── COUNTER BTN PRESS ── */
+    .counter-btn:active {
+      transform: scale(0.88);
+      background: rgba(201,168,76,0.1);
+    }
+
+    /* ── SECTION DIVIDER FADE BG ── */
+    #technique, #faq {
+      position: relative;
+    }
+    #technique::before, #faq::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.04) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    /* ── HDR SLIDER TAG PULSE ── */
+    .hdr-tag-after {
+      animation: tag-pulse 3s ease-in-out infinite;
+    }
+    @keyframes tag-pulse {
+      0%,100% { opacity: 1; }
+      50%      { opacity: 0.7; }
+    }
+
+    /* ── HERO SUB WORD REVEAL ── */
+    .hero-sub {
+      animation: fadeUp 0.9s 0.6s both;
+    }
+
+    /* ── PRICING RESULT FLASH ON CHANGE ── */
+    @keyframes result-flash {
+      0%   { background: rgba(201,168,76,0.15); }
+      100% { background: rgba(201,168,76,0.05); }
+    }
+    .calc-result.flash {
+      animation: result-flash 0.4s ease forwards;
+    }
+
+    /* ── GHOST BUTTON FILL ON HOVER ── */
+    .btn-ghost {
+      position: relative;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .btn-ghost::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(201,168,76,0.06);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+      z-index: -1;
+    }
+    .btn-ghost:hover::before {
+      transform: scaleX(1);
+    }
+
+    /* ── FAQ ANSWER HIGHLIGHT BAR ── */
+    .faq-a-inner {
+      position: relative;
+      padding-left: 1rem;
+    }
+    .faq-a-inner::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 2px;
+      background: var(--gold-d);
+      border-radius: 2px;
+    }
+
+    /* ── SERVICE CARD NUMBER ── */
+    .svc-card::before {
+      content: attr(data-num);
+      position: absolute;
+      top: 1.5rem; right: 1.8rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      color: rgba(201,168,76,0.05);
+      line-height: 1;
+      transition: color 0.35s ease, text-shadow 0.35s ease, transform 0.35s ease;
+      pointer-events: none;
+    }
+    .svc-card { position: relative; }
+    .svc-card:hover::before {
+      color: rgba(201,168,76,0.45);
+      transform: scale(1.1) translateY(-3px);
+      text-shadow:
+        0 0 10px rgba(201,168,76,0.5),
+        0 0 28px rgba(201,168,76,0.18);
+    }
+
+    /* ════════ MORE CONTINUOUS / 24-7 ANIMATIONS ════════ */
+
+    /* HDR divider auto-demo: slowly sweeps left/right to tease interaction */
+    @keyframes hdr-auto {
+      0%   { left: 65%; }
+      50%  { left: 30%; }
+      100% { left: 65%; }
+    }
+    #hdrDiv, #hdrKnob { animation: none; }
+    .hdr-auto-play #hdrDiv  { animation: hdr-auto 7s ease-in-out infinite; }
+    .hdr-auto-play #hdrKnob { animation: hdr-auto 7s ease-in-out infinite; }
+
+    /* Floating particles — hero */
+    .hero-particle {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: 0;
+      pointer-events: none;
+      animation: particle-drift linear infinite;
+    }
+    .hero-particle.diamond {
+      border-radius: 0;
+      transform-origin: center;
+      rotate: 45deg;
+      background: var(--gold-l);
+    }
+    @keyframes particle-drift {
+      0%   { transform: translateY(0)   translateX(0)   scale(1);   opacity: 0; }
+      12%  { opacity: 0.45; }
+      80%  { opacity: 0.22; }
+      100% { transform: translateY(-160px) translateX(var(--dx)) scale(0.3); opacity: 0; }
+    }
+
+    /* Section sparks — about, pricing, process */
+    .section-sparks {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .spark {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: 0;
+      pointer-events: none;
+      animation: spark-float linear infinite;
+    }
+    .spark.cross::before,
+    .spark.cross::after {
+      content: '';
+      position: absolute;
+      background: var(--gold-l);
+    }
+    @keyframes spark-float {
+      0%   { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+      10%  { opacity: 0.3; }
+      85%  { opacity: 0.12; }
+      100% { transform: translateY(var(--dy)) translateX(var(--dx)) scale(0.2); opacity: 0; }
+    }
+
+    /* Twinkling stars — fixed positions, blink in/out */
+    .twinkle {
+      position: absolute;
+      width: 2px; height: 2px;
+      background: var(--gold-l);
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+      animation: twinkle-blink ease-in-out infinite;
+    }
+    @keyframes twinkle-blink {
+      0%, 100% { opacity: 0;    transform: scale(0.5); }
+      50%       { opacity: 0.55; transform: scale(1.4); box-shadow: 0 0 4px 1px rgba(201,168,76,0.4); }
+    }
+
+    /* Nav brand letter-spacing breathe */
+    @keyframes brand-breathe {
+      0%, 100% { letter-spacing: 0.10em; }
+      50%       { letter-spacing: 0.14em; }
+    }
+    .nav-brand {
+      animation: brand-breathe 6s ease-in-out infinite;
+    }
+
+    /* Pricing calculator border slow glow */
+    @keyframes calc-border-glow {
+      0%, 100% { border-color: rgba(201,168,76,0.18); box-shadow: none; }
+      50%       { border-color: rgba(201,168,76,0.4);  box-shadow: 0 0 30px rgba(201,168,76,0.07); }
+    }
+    .calc-box {
+      animation: calc-border-glow 5s ease-in-out infinite;
+    }
+
+    /* Hero vignette slow drift — replaced by subtler version */
+    @keyframes vignette-drift {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.88; }
+    }
+
+    /* About accent border glow — already defined, extended */
+
+    /* Service grid horizontal scan line */
+    @keyframes grid-scan {
+      0%   { transform: translateY(-100%); opacity: 0; }
+      10%  { opacity: 0.06; }
+      90%  { opacity: 0.06; }
+      100% { transform: translateY(600%); opacity: 0; }
+    }
+    .services-grid {
+      position: relative;
+      overflow: hidden;
+    }
+    .services-grid::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      animation: grid-scan 9s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    /* Eyebrow text slow shimmer */
+    @keyframes eyebrow-glow {
+      0%, 100% { color: var(--gold); text-shadow: none; }
+      50%       { color: var(--gold-l); text-shadow: 0 0 12px rgba(201,168,76,0.4); }
+    }
+    .eyebrow {
+      animation: eyebrow-glow 5s ease-in-out infinite;
+    }
+
+    /* Hero CTA button slow border pulse */
+    @keyframes ghost-border-pulse {
+      0%, 100% { border-color: rgba(255,255,255,0.2); }
+      50%       { border-color: rgba(201,168,76,0.45); }
+    }
+    .btn-ghost {
+      animation: ghost-border-pulse 4s ease-in-out infinite;
+    }
+
+    /* FAQ question text slow shimmer on closed items */
+    @keyframes faq-idle {
+      0%, 100% { color: var(--white); }
+      50%       { color: rgba(245,239,228,0.7); }
+    }
+    .faq-item:not(.open) .faq-q-text {
+      animation: faq-idle 6s ease-in-out infinite;
+    }
+    .faq-item:nth-child(2):not(.open) .faq-q-text { animation-delay: 0.8s; }
+    .faq-item:nth-child(3):not(.open) .faq-q-text { animation-delay: 1.6s; }
+    .faq-item:nth-child(4):not(.open) .faq-q-text { animation-delay: 2.4s; }
+    .faq-item:nth-child(5):not(.open) .faq-q-text { animation-delay: 3.2s; }
+    .faq-item:nth-child(6):not(.open) .faq-q-text { animation-delay: 4.0s; }
+    .faq-item:nth-child(7):not(.open) .faq-q-text { animation-delay: 4.8s; }
+    .faq-item:nth-child(8):not(.open) .faq-q-text { animation-delay: 5.6s; }
+
+    /* ── GPU ACCELERATION FOR MOBILE ANIMATIONS ── */
+    .hero-particle, .spark, .twinkle,
+    .svc-icon svg, .proc-num, .about-badge,
+    .gold-rule, .hdr-knob, .stat-num,
+    .hero-h1 em, .hero-scroll-line {
+      will-change: transform, opacity;
+    }
+
+    /* Floating icons on service cards */
+    @keyframes icon-float {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-6px); }
+    }
+    .svc-icon svg {
+      animation: icon-float 3.5s ease-in-out infinite;
+    }
+    .svc-card:nth-child(2) .svc-icon svg { animation-delay: 0.5s; }
+    .svc-card:nth-child(3) .svc-icon svg { animation-delay: 1s; }
+    .svc-card:nth-child(4) .svc-icon svg { animation-delay: 1.5s; }
+    .svc-card:nth-child(5) .svc-icon svg { animation-delay: 2s; }
+    .svc-card:nth-child(6) .svc-icon svg { animation-delay: 2.5s; }
+    /* Keep hover transform working alongside float */
+    .svc-card:hover .svc-icon svg {
+      animation: none;
+      transform: scale(1.18) rotate(-4deg);
+    }
+
+    /* Slow pulse glow on process step numbers */
+    @keyframes proc-breathe {
+      0%, 100% { box-shadow: 0 0 0 0 transparent; border-color: var(--gold-d); }
+      50%       { box-shadow: 0 0 14px 3px rgba(201,168,76,0.18); border-color: var(--gold); }
+    }
+    .proc-step.in .proc-num {
+      animation: proc-breathe 3s ease-in-out infinite;
+    }
+    .proc-step.in:nth-child(2) .proc-num { animation-delay: 0.5s; }
+    .proc-step.in:nth-child(3) .proc-num { animation-delay: 1s; }
+    .proc-step.in:nth-child(4) .proc-num { animation-delay: 1.5s; }
+    .proc-step.in:nth-child(5) .proc-num { animation-delay: 2s; }
+
+    /* Gold rule slow shimmer sweep */
+    @keyframes rule-shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position:  200% center; }
+    }
+    .gold-rule.grown {
+      width: 48px;
+      background: linear-gradient(90deg,
+        var(--gold-d) 0%,
+        var(--gold) 30%,
+        var(--gold-l) 50%,
+        var(--gold) 70%,
+        var(--gold-d) 100%);
+      background-size: 200% auto;
+      animation: rule-shimmer 4s linear infinite;
+    }
+
+    /* Subtle float on about badge */
+    @keyframes badge-float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-5px); }
+    }
+    .about-badge {
+      animation: badge-float 4s ease-in-out infinite;
+    }
+
+    /* Stat nums slow colour cycle */
+    @keyframes stat-breathe {
+      0%, 100% { color: var(--gold); }
+      50%       { color: var(--gold-l); }
+    }
+    .stat-num.popped {
+      animation: stat-breathe 4s ease-in-out infinite;
+    }
+
+    /* HDR knob slow bob */
+    @keyframes knob-bob {
+      0%, 100% { box-shadow: 0 0 0 6px rgba(201,168,76,0.25); }
+      50%       { box-shadow: 0 0 0 10px rgba(201,168,76,0.12); }
+    }
+    .hdr-knob {
+      animation: knob-bob 2.5s ease-in-out infinite;
+    }
+
+    /* Hero scroll line already pulses — make label also fade */
+    @keyframes label-fade {
+      0%, 100% { opacity: 0.3; }
+      50%       { opacity: 0.85; }
+    }
+    .hero-scroll-label {
+      animation: label-fade 2.2s ease-in-out infinite;
+    }
+
+    /* Subtle background shimmer on hero vignette */
+    @keyframes vignette-drift {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.88; }
+    }
+    .hero-vignette {
+      animation: vignette-drift 8s ease-in-out infinite;
+    }
+
+    /* About accent border slow corner glow */
+    @keyframes corner-glow {
+      0%, 100% { border-color: rgba(201,168,76,0.18); }
+      50%       { border-color: rgba(201,168,76,0.45); }
+    }
+    .about-accent-border.drawn {
+      animation: corner-glow 4s ease-in-out infinite;
+    }
+
+    /* WA float button already pulses — add to bubble */
+    @keyframes bubble-drift {
+      0%, 100% { transform: translateX(0) translateX(0px); }
+      50%       { transform: translateX(0) translateX(-3px); }
+    }
+    .wa-float:hover .wa-float-bubble {
+      animation: bubble-drift 2s ease-in-out infinite;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ═══════ NAV ═══════ -->
+<nav id="nav">
+  <a href="#" class="nav-brand">Muskatnuss <span>Der Photo</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">Tentang</a></li>
+    <li><a href="#process">Proses</a></li>
+    <li><a href="#pricing">Harga</a></li>
+    <li><a href="#gallery">Galeri</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#order" class="cta-link">Pesan Sekarang</a></li>
+  </ul>
+  <div class="nav-hamburger" id="burger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="toggleMenu()">Tentang</a>
+  <a href="#process" onclick="toggleMenu()">Proses</a>
+  <a href="#pricing" onclick="toggleMenu()">Harga</a>
+  <a href="#gallery" onclick="toggleMenu()">Galeri</a>
+  <a href="#faq" onclick="toggleMenu()">FAQ</a>
+  <a href="#order" onclick="toggleMenu()" style="color:var(--gold)">Pesan Sekarang</a>
+</div>
+
+<!-- ═══════ HERO ═══════ -->
+<section id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-vignette"></div>
+  <div id="heroParticles"></div>
+  <div class="hero-content">
+    <span class="eyebrow hero-eyebrow-full">Real Estate Photography · Boyolali &amp; Solo Raya</span>
+    <span class="eyebrow hero-eyebrow-short">Boyolali &amp; Solo Raya</span>
+    <h1 class="hero-h1">
+      Every Space<br><em>Deserves</em><br>Its Story.
+    </h1>
+    <p class="hero-sub">Fotografi properti profesional yang mengubah setiap ruangan menjadi pengalaman visual yang tak terlupakan.</p>
+    <div class="hero-btns">
+      <a href="#order" class="btn-gold">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.69A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.36 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Hubungi via WhatsApp
+      </a>
+      <a href="#gallery" class="btn-ghost">Lihat Galeri</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span class="hero-scroll-label">Scroll</span>
+  </div>
+</section>
+
+<!-- ═══════ ABOUT ═══════ -->
+<section id="about" class="section" style="position:relative">
+  <div class="section-sparks" id="aboutSparks"></div>
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-frame r">
+        <div class="about-accent-border"></div>
+        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=800&q=80" alt="Real estate photography setup">
+        <div class="about-badge">
+          <span class="about-badge-num">HDR</span>
+          <span class="about-badge-label">Real Estate</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="eyebrow r">Tentang Studio</span>
+        <h2 class="r r2">Di Mana <em>Cahaya</em><br>Bertemu Arsitektur</h2>
+        <div class="gold-rule r r3"></div>
+        <p class="r r3">Muskatnuss Der Photo adalah studio fotografi properti berbasis di Boyolali, melayani seluruh area Solo Raya. Kami berspesialisasi dalam real estate photography profesional   memaksimalkan cahaya alami dan teknik editing untuk menciptakan gambar yang jernih, hidup, dan penuh karakter.</p>
+        <p class="r r3">Kami hadir untuk membantu agen properti, developer, dan pemilik rumah menyajikan ruang mereka dalam kualitas visual terbaik. Karena kesan pertama pembeli selalu dimulai dari sebuah foto yang baik.</p>
+        <div class="about-stats r r4">
+          <div>
+            <span class="stat-num">HDR</span>
+            <span class="stat-desc">HDR Editing</span>
+          </div>
+          <div>
+            <span class="stat-num">48h</span>
+            <span class="stat-desc">Pengiriman File</span>
+          </div>
+          <div>
+            <span class="stat-num">100%</span>
+            <span class="stat-desc">Kepuasan Klien</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ TECHNIQUE / HDR SLIDER ═══════ -->
+<section id="technique" class="section">
+  <div class="technique-header r">
+    <span class="eyebrow">Teknik Kami</span>
+    <h2>HDR <em>Real Estate</em> Magic</h2>
+    <div class="gold-rule"></div>
+    <p style="color:var(--muted);font-size:0.9rem">Geser untuk melihat transformasi dramatis dari teknik editing eksklusif kami</p>
+  </div>
+
+  <div class="hdr-wrap r" id="hdrWrap">
+    <img class="hdr-after-img"
+         src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+         alt="After HDR Editing" draggable="false">
+
+    <div class="hdr-before-pane" id="hdrBefore">
+      <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+           alt="Before" draggable="false">
+    </div>
+
+    <div class="hdr-divider" id="hdrDiv"></div>
+    <div class="hdr-knob" id="hdrKnob">⟺</div>
+
+    <span class="hdr-tag hdr-tag-before">Sebelum</span>
+    <span class="hdr-tag hdr-tag-after">Hasil Muskatnuss</span>
+  </div>
+  <p class="technique-caption r">Drag slider untuk melihat perbedaan kualitas editing · Real Estate Photography by Muskatnuss Der Photo</p>
+</section>
+
+<!-- ═══════ SERVICES ═══════ -->
+<section id="services" class="section">
+  <div class="container">
+    <span class="eyebrow r">Layanan Kami</span>
+    <h2 class="r r2" style="font-size:clamp(2.2rem,4vw,3.8rem); margin-top:0.5rem">Apa yang Kami <em>Tawarkan</em></h2>
+    <div class="gold-rule r r3"></div>
+
+    <div class="services-grid">
+
+      <div class="svc-card r" data-num="01">
+        <div class="svc-icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+            <rect x="4" y="10" width="32" height="22" rx="2"/>
+            <path d="M16 10 L16 6 L24 6 L24 10"/>
+            <circle cx="20" cy="21" r="6"/>
+            <circle cx="20" cy="21" r="3" fill="rgba(201,168,76,0.3)"/>
+          </svg>
+        </div>
+        <h3>HDR Real Estate Photography</h3>
+        <p>Teknik HDR real estate photography kami memaksimalkan cahaya alami di setiap ruangan   menghasilkan gambar yang terang, jernih, dan natural melalui post-processing profesional.</p>
+      </div>
+
+      <div class="svc-card r r2" data-num="02">
+        <div class="svc-icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+            <rect x="4" y="8" width="32" height="24" rx="2"/>
+            <path d="M4 18 L36 18"/>
+            <path d="M14 8 L14 32"/>
+            <circle cx="9" cy="13" r="2" fill="var(--gold)" stroke="none"/>
+          </svg>
+        </div>
+        <h3>Professional Editing & Retouching</h3>
+        <p>Setiap gambar melalui proses editing premium   koreksi warna, white balance sempurna, dan retouching detail untuk hasil yang melampaui ekspektasi.</p>
+      </div>
+
+      <div class="svc-card r r3" data-num="03">
+        <div class="svc-icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M6 34 L6 14 L20 6 L34 14 L34 34 Z"/>
+            <rect x="15" y="24" width="10" height="10"/>
+            <rect x="11" y="15" width="7" height="7"/>
+            <rect x="22" y="15" width="7" height="7"/>
+          </svg>
+        </div>
+        <h3>Room-by-Room Coverage</h3>
+        <p>Paket fleksibel per ruangan   ruang tamu, kamar tidur, dapur, kamar mandi, dan area eksterior. Minimum 3 ruangan per sesi.</p>
+      </div>
+
+      <div class="svc-card r" data-num="04">
+        <div class="svc-icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+            <circle cx="20" cy="20" r="14"/>
+            <path d="M20 10 L20 20 L28 20"/>
+          </svg>
+        </div>
+        <h3>48 Jam Turnaround</h3>
+        <p>File high-resolution terkirim dalam 48 jam setelah sesi. Siap digunakan untuk listing online, brosur, dan semua kebutuhan marketing properti.</p>
+      </div>
+
+      <div class="svc-card r r2" data-num="05">
+        <div class="svc-icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M20 4 L24 14 L36 14 L27 21 L30 32 L20 25 L10 32 L13 21 L4 14 L16 14 Z" fill="rgba(201,168,76,0.1)"/>
+          </svg>
+        </div>
+        <h3>Diskon 50% Order Pertama</h3>
+        <p>Klien baru mendapatkan diskon 50% untuk order pertama. Coba kualitas premium Muskatnuss dengan investasi yang sangat terjangkau.</p>
+      </div>
+
+      <div class="svc-card r r3" data-num="06">
+        <div class="svc-icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M4 22 C4 22 10 8 20 8 C30 8 36 22 36 22"/>
+            <path d="M4 22 C4 22 10 36 20 36 C30 36 36 22 36 22"/>
+            <circle cx="20" cy="22" r="5"/>
+          </svg>
+        </div>
+        <h3>High-Res JPEG Delivery</h3>
+        <p>Semua foto dikirim via Google Drive   format JPEG high-resolution, siap untuk listing online dan marketing material. <strong style="color:var(--gold)">File RAW tidak disertakan</strong> dalam paket manapun.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PRICING ═══════ -->
+<section id="pricing" class="section" style="position:relative">
+  <div class="section-sparks" id="pricingSparks"></div>
+  <div class="container">
+    <div class="pricing-grid">
+      <div class="pricing-text">
+        <span class="eyebrow r">Harga Transparan</span>
+        <h2 class="r r2">Investasi yang <em>Sepadan</em></h2>
+        <div class="gold-rule r r3"></div>
+
+        <div class="promo-pill r r3">🎉 Promo Klien Baru · Solo Raya & Boyolali</div>
+        <p class="pricing-note r r3">
+          Harga kami <strong>Rp 100.000 per ruangan</strong>   terjangkau untuk kualitas HDR profesional di area Boyolali dan Solo Raya.<br><br>
+          <span class="hl">Order pertama Anda</span> mendapatkan diskon <strong>50%</strong>, menjadi hanya <strong>Rp 50.000/ruangan</strong>.<br><br>
+          Mulai order kedua, harga kembali normal di <strong>Rp 100.000/ruangan</strong>. Minimum <strong>3 ruangan</strong> per sesi.
+        </p>
+
+        <div style="margin-top:1.6rem;display:flex;flex-direction:column;gap:0.8rem" class="r r4">
+
+          <!-- Testimonial policy -->
+          <div style="padding:1rem 1.2rem;border:1px solid var(--border);background:rgba(201,168,76,0.04);display:flex;gap:0.9rem;align-items:flex-start">
+            <span style="font-size:1.1rem;flex-shrink:0;margin-top:1px">📝</span>
+            <div>
+              <div style="font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem">Syarat Order Pertama</div>
+              <p style="font-size:0.82rem;color:var(--muted);line-height:1.7">Klien order pertama <strong style="color:var(--white)">wajib memberikan ulasan / testimoni</strong> setelah menerima hasil foto   berupa Google Review, testimonial WhatsApp, atau posting media sosial. Ini membantu kami tumbuh bersama!</p>
+            </div>
+          </div>
+
+          <!-- No RAW policy -->
+          <div style="padding:1rem 1.2rem;border:1px solid rgba(255,80,80,0.15);background:rgba(255,80,80,0.04);display:flex;gap:0.9rem;align-items:flex-start">
+            <span style="font-size:1.1rem;flex-shrink:0;margin-top:1px">🚫</span>
+            <div>
+              <div style="font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:#e07070;margin-bottom:0.3rem">File RAW Tidak Disertakan</div>
+              <p style="font-size:0.82rem;color:var(--muted);line-height:1.7">Semua paket hanya mencakup file <strong style="color:var(--white)">JPEG high-resolution</strong> yang telah diedit. File RAW mentah tidak akan diberikan dalam kondisi apapun.</p>
+            </div>
+          </div>
+
+          <!-- Area restriction -->
+          <div style="padding:1rem 1.2rem;border:1px solid var(--border2);background:rgba(255,255,255,0.02);display:flex;gap:0.9rem;align-items:flex-start">
+            <span style="font-size:1.1rem;flex-shrink:0;margin-top:1px">📍</span>
+            <div>
+              <div style="font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin-bottom:0.3rem">Area Layanan</div>
+              <p style="font-size:0.82rem;color:var(--muted);line-height:1.7">Kami hanya menerima order di area <strong style="color:var(--white)">Boyolali dan Solo Raya</strong> (Surakarta, Sragen, Klaten, Sukoharjo, Karanganyar, Wonogiri). Di luar area ini, mohon maaf belum dapat dilayani.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top:1.5rem" class="r r4">
+          <div style="padding:1.2rem; border:1px solid var(--border); background:rgba(201,168,76,0.04)">
+            <div style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:0.8rem">Paket Contoh</div>
+            <div style="display:flex;flex-direction:column;gap:0.5rem">
+              <div style="display:flex;justify-content:space-between;font-size:0.85rem">
+                <span style="color:var(--muted)">3 ruangan   order pertama</span>
+                <span style="color:var(--gold)">Rp 150.000</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:0.85rem">
+                <span style="color:var(--muted)">5 ruangan   order pertama</span>
+                <span style="color:var(--gold)">Rp 250.000</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:0.85rem">
+                <span style="color:var(--muted)">5 ruangan   reguler</span>
+                <span style="color:var(--white)">Rp 500.000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calculator -->
+      <div class="calc-box r r2">
+        <div class="calc-box-title">Kalkulator Estimasi Harga</div>
+
+        <div class="calc-row">
+          <span class="calc-label">Jumlah Ruangan</span>
+          <div class="counter">
+            <button class="counter-btn" id="btnDec">−</button>
+            <span class="counter-val" id="cntVal">3</span>
+            <button class="counter-btn" id="btnInc">+</button>
+          </div>
+        </div>
+
+        <div class="calc-row">
+          <span class="calc-label">Tipe Order</span>
+          <div class="order-tabs">
+            <button class="order-tab on" id="tabFirst" onclick="setTab('first')">Pertama (50% off)</button>
+            <button class="order-tab" id="tabReg" onclick="setTab('regular')">Reguler</button>
+          </div>
+        </div>
+
+        <div class="calc-result">
+          <div>
+            <div class="result-left-title">Total Estimasi</div>
+            <div id="discChip" class="discount-chip">Hemat 50%</div>
+          </div>
+          <div style="text-align:right">
+            <div>
+              <span class="result-total" id="resTotal">Rp 150.000</span>
+              <span class="result-orig" id="resOrig">Rp 300.000</span>
+            </div>
+            <div class="result-per" id="resPer">Rp 50.000 / ruangan</div>
+          </div>
+        </div>
+
+        <p class="calc-footnote">* Minimum 3 ruangan · Termasuk editing 48 jam · File RAW tidak disertakan · Hanya melayani Boyolali & Solo Raya</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ GALLERY ═══════ -->
+<section id="gallery" class="section">
+  <div class="container-wide">
+    <div class="gallery-intro r">
+      <div>
+        <span class="eyebrow">Portfolio</span>
+        <h2 style="font-size:clamp(2.2rem,4vw,3.8rem);margin-top:0.4rem">Hasil <em>Karya</em> Kami</h2>
+        <div class="gold-rule"></div>
+      </div>
+      <span class="gallery-hint">Klik foto untuk memperbesar</span>
+    </div>
+    <div class="gallery-masonry r" id="galGrid"></div>
+  </div>
+</section>
+
+<!-- ═══════ PROCESS ═══════ -->
+<section id="process" class="section" style="position:relative">
+  <div class="section-sparks" id="processSparks"></div>
+  <div class="container">
+    <div class="process-header r">
+      <span class="eyebrow">Cara Kerja</span>
+      <h2>Dari Booking hingga <em>Hasil Foto</em></h2>
+      <div class="gold-rule"></div>
+      <p style="color:var(--muted);font-size:0.9rem">Proses yang mudah, transparan, dan profesional dari awal hingga akhir</p>
+    </div>
+
+    <div class="process-track">
+
+      <div class="proc-step r">
+        <div class="proc-num">01</div>
+        <div class="proc-body">
+          <span class="proc-tag">Hari H−3 s/d H−7</span>
+          <h3>Hubungi & Konfirmasi Booking</h3>
+          <p>Isi formulir di halaman ini atau langsung chat via WhatsApp. Kami akan konfirmasi ketersediaan jadwal, alamat properti, dan jumlah ruangan yang akan difoto. Lokasi harus berada di area <strong style="color:var(--white)">Boyolali atau Solo Raya</strong>.</p>
+        </div>
+      </div>
+
+      <div class="proc-step r r2">
+        <div class="proc-num">02</div>
+        <div class="proc-body">
+          <span class="proc-tag">Sebelum Sesi</span>
+          <h3>Persiapan Properti</h3>
+          <p>Kami akan memberikan checklist persiapan singkat via WhatsApp   tips merapikan ruangan, pencahayaan yang ideal, dan detail kecil yang berdampak besar pada hasil foto. Properti yang siap = hasil yang lebih maksimal.</p>
+        </div>
+      </div>
+
+      <div class="proc-step r r3">
+        <div class="proc-num">03</div>
+        <div class="proc-body">
+          <span class="proc-tag">Hari Pemotretan</span>
+          <h3>Sesi Foto di Lokasi</h3>
+          <p>Fotografer datang tepat waktu sesuai jadwal. Setiap ruangan dipotret dari beberapa sudut terbaik dengan teknik real estate photography profesional. Durasi sesi bervariasi tergantung jumlah ruangan   estimasi <strong style="color:var(--white)">1–3 jam</strong> untuk 3–6 ruangan.</p>
+        </div>
+      </div>
+
+      <div class="proc-step r r4">
+        <div class="proc-num">04</div>
+        <div class="proc-body">
+          <span class="proc-tag">Pasca Sesi · Maks 48 Jam</span>
+          <h3>Editing & Post-Processing</h3>
+          <p>Foto melewati proses editing HDR   exposure blending, koreksi warna, white balance, dan retouching detail. Semua dilakukan secara manual untuk hasil yang alami dan profesional. <strong style="color:var(--gold)">File RAW tidak disertakan</strong>   hanya JPEG final beresolusi tinggi.</p>
+        </div>
+      </div>
+
+      <div class="proc-step r r4">
+        <div class="proc-num">05</div>
+        <div class="proc-body">
+          <span class="proc-tag">Pengiriman Final</span>
+          <h3>Terima File & Berikan Ulasan</h3>
+          <p>File JPEG dikirim via Google Drive dalam maksimal 48 jam. Untuk <strong style="color:var(--white)">order pertama</strong>, kami mohon kesediaan Anda memberikan ulasan   berupa Google Review, testimoni WhatsApp, atau posting media sosial. Ini sangat membantu pertumbuhan studio kami! 🙏</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════ FAQ ═══════ -->
+<section id="faq" class="section">
+  <div class="container">
+    <div class="faq-wrap">
+
+      <div class="faq-left r">
+        <span class="eyebrow">FAQ</span>
+        <h2>Pertanyaan yang Sering <em>Ditanyakan</em></h2>
+        <div class="gold-rule"></div>
+        <p>Tidak menemukan jawaban yang Anda cari? Hubungi kami langsung via WhatsApp   kami siap membantu!</p>
+        <div style="margin-top:2rem">
+          <a href="https://wa.me/6282241921594" target="_blank" class="btn-gold">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Tanya via WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="faq-list r r2" id="faqList">
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="faq-q-text">Apakah saya bisa mendapatkan file RAW / mentah?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            <strong>Tidak.</strong> File RAW tidak disertakan dalam paket apapun dan dalam kondisi apapun. Anda akan menerima file <span class="pill">JPEG High-Resolution</span> yang telah melalui proses editing penuh   siap untuk listing online, cetak brosur, dan semua kebutuhan marketing properti Anda.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="faq-q-text">Apakah Anda melayani di luar Boyolali dan Solo Raya?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            Saat ini kami <strong>hanya melayani area Boyolali dan Solo Raya</strong>   meliputi Surakarta, Sragen, Klaten, Sukoharjo, Karanganyar, dan Wonogiri. Pemesanan di luar area tersebut belum bisa kami akomodasi untuk saat ini.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="faq-q-text">Berapa lama proses pengiriman hasil foto?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            File dikirim via Google Drive dalam <strong>maksimal 48 jam</strong> setelah sesi pemotretan selesai. Untuk properti dengan jumlah ruangan sangat banyak (10+), mungkin memerlukan waktu sedikit lebih lama   akan dikonfirmasi sebelumnya.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="faq-q-text">Mengapa order pertama wajib memberikan testimoni?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            Kami adalah studio yang sedang berkembang, dan diskon 50% adalah bentuk apresiasi kami kepada klien awal yang membantu kami membangun reputasi. Sebagai gantinya, kami meminta ulasan jujur   bisa berupa <span class="pill">Google Review</span>, <span class="pill">testimoni WA</span>, atau <span class="pill">posting medsos</span>. Tidak perlu panjang, cukup pengalaman nyata Anda!
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="faq-q-text">Berapa minimum ruangan yang bisa dipesan?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            Minimum <strong>3 ruangan per sesi</strong>. Ini berlaku untuk semua paket   baik order pertama maupun reguler. Tidak ada batasan maksimum   untuk properti besar (10+ ruangan), harga akan dikonfirmasi via WhatsApp.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="faq-q-text">Kamera apa yang digunakan? Apakah hasilnya berkualitas profesional?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            Kualitas gambar ditentukan oleh teknik, pengalaman, dan proses editing   bukan sekadar merek kamera. Kami terus mengembangkan skill dan peralatan untuk memberikan hasil terbaik. Lihat galeri kami untuk menilai sendiri hasilnya!
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="faq-q-text">Bagaimana cara menentukan ini "order pertama" atau bukan?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            Sistem kami berbasis kepercayaan. Centang kotak "order pertama" pada formulir jika ini memang pertama kali Anda memesan dari Muskatnuss Der Photo. Klien yang sudah pernah memesan sebelumnya diharapkan menggunakan harga reguler <span class="pill">Rp 100.000/ruangan</span>. Kami percaya klien kami adalah orang-orang yang jujur. 🙏
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="faq-q-text">Apakah ada biaya transportasi tambahan?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            Untuk area <strong>Boyolali kota dan sekitarnya</strong>, biaya transportasi sudah termasuk dalam harga. Untuk lokasi di luar Boyolali (tetapi masih dalam Solo Raya), mungkin ada biaya transportasi kecil yang akan dikonfirmasi terlebih dahulu via WhatsApp sebelum booking dikonfirmasi.
+          </div></div>
+        </div>
+
+      </div><!-- /faq-list -->
+    </div><!-- /faq-wrap -->
+  </div>
+</section>
+
+<!-- ═══════ ORDER / CONTACT ═══════ -->
+<section id="order" class="section">
+  <div class="container">
+    <div class="order-grid">
+
+      <div>
+        <span class="eyebrow r">Hubungi Kami</span>
+        <h2 class="r r2">Siap Mengangkat <em>Properti</em> Anda?</h2>
+        <div class="gold-rule r r3"></div>
+        <p class="r r3">Isi formulir di samping, kami akan segera menghubungi Anda via WhatsApp untuk konfirmasi jadwal dan detail sesi pemotretan.</p>
+
+        <div class="contacts">
+          <div class="contact-row r r3">
+            <div class="contact-ico">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div class="contact-detail">
+              <span>Lokasi</span>
+              <a href="#">Boyolali, Jawa Tengah</a>
+            </div>
+          </div>
+          <div class="contact-row r r4">
+            <div class="contact-ico">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.69A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.36 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+            </div>
+            <div class="contact-detail">
+              <span>WhatsApp</span>
+              <a href="https://wa.me/6282241921594" target="_blank">+62 822-4192-1594</a>
+            </div>
+          </div>
+          <div class="contact-row r r4">
+            <div class="contact-ico">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+              </svg>
+            </div>
+            <div class="contact-detail">
+              <span>Pengiriman File</span>
+              <a href="#">48 jam setelah sesi</a>
+            </div>
+          </div>
+          <div class="contact-row r r4">
+            <div class="contact-ico">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/>
+                <path d="M8 2v4M16 2v4"/>
+              </svg>
+            </div>
+            <div class="contact-detail">
+              <span>Minimum Order</span>
+              <a href="#">3 ruangan per sesi</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="order-form r r2">
+        <div class="fg">
+          <label>Nama Lengkap *</label>
+          <input type="text" id="fName" placeholder="Budi Santoso">
+        </div>
+        <div class="fg-row">
+          <div class="fg">
+            <label>Nomor WhatsApp *</label>
+            <input type="tel" id="fPhone" placeholder="+62 8xx xxxx xxxx">
+          </div>
+          <div class="fg">
+            <label>Tanggal Diinginkan</label>
+            <input type="date" id="fDate">
+          </div>
+        </div>
+        <div class="fg">
+          <label>Alamat Properti *</label>
+          <input type="text" id="fAddr" placeholder="Jl. Contoh No. 1, Surakarta">
+        </div>
+        <div class="fg-row">
+          <div class="fg">
+            <label>Jumlah Ruangan *</label>
+            <select id="fRooms">
+              <option value="3">3 Ruangan</option>
+              <option value="4">4 Ruangan</option>
+              <option value="5">5 Ruangan</option>
+              <option value="6">6 Ruangan</option>
+              <option value="7">7 Ruangan</option>
+              <option value="8">8 Ruangan</option>
+              <option value="9">9 Ruangan</option>
+              <option value="10+">10+ (konfirmasi harga)</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label>Tipe Properti</label>
+            <select id="fType">
+              <option value="Rumah">Rumah</option>
+              <option value="Apartemen">Apartemen</option>
+              <option value="Villa">Villa</option>
+              <option value="Ruko / Komersial">Ruko / Komersial</option>
+              <option value="Kos">Kos</option>
+            </select>
+          </div>
+        </div>
+        <div class="fg">
+          <label>Catatan Tambahan</label>
+          <textarea id="fNotes" placeholder="Ceritakan lebih lanjut tentang properti Anda, waktu yang fleksibel, atau permintaan khusus..."></textarea>
+        </div>
+        <div class="first-check">
+          <input type="checkbox" id="chkFirst" checked>
+          <label for="chkFirst">🎉 Ini adalah order <strong>pertama</strong> saya   saya ingin menggunakan promo diskon 50% dan <strong>bersedia memberikan ulasan / testimoni</strong> setelah menerima hasil foto</label>
+        </div>
+        <button class="wa-submit" onclick="sendWA()">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+          Kirim Pesanan via WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <div class="foot-brand">Muskatnuss <span>Der Photo</span></div>
+  <p>© 2025 Muskatnuss Der Photo · Boyolali, Jawa Tengah · Melayani Solo Raya</p>
+  <a class="foot-wa" href="https://wa.me/6282241921594" target="_blank">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+    +62 822-4192-1594
+  </a>
+</footer>
+
+<!-- ═══════ FLOATING WA ═══════ -->
+<div class="wa-float">
+  <div class="wa-float-bubble">Chat dengan kami sekarang!</div>
+  <a href="https://wa.me/6282241921594" target="_blank" class="wa-float-btn" aria-label="Chat WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+  </a>
+</div>
+
+<!-- ═══════ LIGHTBOX ═══════ -->
+<div id="lightbox">
+  <button class="lb-close" onclick="closeLB()">×</button>
+  <button class="lb-nav" id="lb-prev" onclick="lbNav(-1)">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-nav" id="lb-next" onclick="lbNav(1)">›</button>
+</div>
+
+<!-- ═══════ JAVASCRIPT ═══════ -->
+<script>
+  /* ── NAV ── */
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('stuck', scrollY > 60));
+
+  /* ── MOBILE MENU ── */
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  /* ── HERO BG PAN ── */
+  setTimeout(() => document.getElementById('heroBg').classList.add('pan'), 100);
+
+  /* ── REVEAL ON SCROLL ── */
+  const ro = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => {
+          e.target.classList.add('in');
+          // Animate gold rules inside revealed elements
+          e.target.querySelectorAll('.gold-rule').forEach(gr => gr.classList.add('grown'));
+          // Animate stat nums
+          e.target.querySelectorAll('.stat-num').forEach(s => {
+            setTimeout(() => s.classList.add('popped'), 200);
+          });
+        }, i * 60);
+        ro.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.r').forEach(el => ro.observe(el));
+
+  // Standalone gold rules not inside .r elements
+  const grObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('grown'); grObs.unobserve(e.target); }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -20px 0px' });
+  document.querySelectorAll('.gold-rule:not(.r *)').forEach(el => grObs.observe(el));
+
+  /* ── ABOUT ACCENT BORDER DRAW ── */
+  const borderObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelector('.about-accent-border')?.classList.add('drawn');
+        borderObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.about-img-frame').forEach(el => borderObs.observe(el));
+
+  /* ── HERO PARALLAX — desktop only ── */
+  const heroBgEl = document.getElementById('heroBg');
+  const isMobile = () => window.innerWidth <= 860;
+  window.addEventListener('scroll', () => {
+    if (!isMobile() && scrollY < window.innerHeight) {
+      heroBgEl.style.transform = `scale(1) translateY(${scrollY * 0.28}px)`;
+    }
+  }, { passive: true });
+
+  /* ── CALC RESULT FLASH ── */
+  function flashResult() {
+    const res = document.querySelector('.calc-result');
+    res.classList.remove('flash');
+    void res.offsetWidth;
+    res.classList.add('flash');
+  }
+
+  // Process steps slide-in
+  const procObs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('in'), i * 120);
+        procObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.proc-step').forEach(el => procObs.observe(el));
+
+  /* ── HDR SLIDER ── */
+  const wrap = document.getElementById('hdrWrap');
+  const beforePane = document.getElementById('hdrBefore');
+  const divLine = document.getElementById('hdrDiv');
+  const knob = document.getElementById('hdrKnob');
+  let dragging = false;
+
+  function moveSplit(clientX) {
+    const r = wrap.getBoundingClientRect();
+    let pct = Math.max(2, Math.min(98, ((clientX - r.left) / r.width) * 100));
+    beforePane.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+    divLine.style.left = pct + '%';
+    knob.style.left = pct + '%';
+  }
+
+  wrap.addEventListener('mousedown',  e => { dragging = true; moveSplit(e.clientX); });
+  document.addEventListener('mouseup', () => dragging = false);
+  document.addEventListener('mousemove', e => { if (dragging) moveSplit(e.clientX); });
+  wrap.addEventListener('touchstart',  e => { dragging = true; moveSplit(e.touches[0].clientX); }, { passive: true });
+  document.addEventListener('touchend', () => dragging = false);
+  document.addEventListener('touchmove', e => { if (dragging) moveSplit(e.touches[0].clientX); }, { passive: true });
+
+  // Init at 40%
+  window.addEventListener('load', () => {
+    const r = wrap.getBoundingClientRect();
+    moveSplit(r.left + r.width * 0.40);
+  });
+
+  /* ── PRICING CALCULATOR ── */
+  const RATE = 100000;
+  let rooms = 3, orderType = 'first';
+
+  function fmt(n) { return 'Rp ' + n.toLocaleString('id-ID'); }
+
+  function setTab(t) {
+    orderType = t;
+    document.getElementById('tabFirst').classList.toggle('on', t === 'first');
+    document.getElementById('tabReg').classList.toggle('on', t === 'regular');
+    calcUpdate(); flashResult();
+  }
+
+  function calcUpdate() {
+    const price = orderType === 'first' ? RATE * 0.5 : RATE;
+    const total = price * rooms;
+    const orig  = RATE * rooms;
+    document.getElementById('cntVal').textContent = rooms;
+    document.getElementById('resTotal').textContent = fmt(total);
+    document.getElementById('resOrig').textContent = orderType === 'first' ? fmt(orig) : '';
+    document.getElementById('resPer').textContent  = fmt(price) + ' / ruangan';
+    document.getElementById('discChip').style.display = orderType === 'first' ? 'inline-block' : 'none';
+  }
+
+  document.getElementById('btnInc').addEventListener('click', () => { rooms = Math.min(20, rooms + 1); calcUpdate(); flashResult(); });
+  document.getElementById('btnDec').addEventListener('click', () => { rooms = Math.max(3, rooms - 1); calcUpdate(); flashResult(); });
+  calcUpdate();
+
+  /* ── GALLERY ── */
+  const PHOTOS = [
+    { src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9', alt: 'Eksterior Mewah' },
+    { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c', alt: 'Dapur Modern' },
+    { src: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2', alt: 'Ruang Tamu' },
+    { src: 'https://images.unsplash.com/photo-1484154218962-a197022b5858', alt: 'Dapur Bersih' },
+    { src: 'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83', alt: 'Fasad Rumah' },
+    { src: 'https://images.unsplash.com/photo-1556020685-ae41abfc9365', alt: 'Ruang Makan' },
+    { src: 'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6', alt: 'Living Area' },
+    { src: 'https://images.unsplash.com/photo-1615529328331-f8917597711f', alt: 'Kamar Tidur' },
+    { src: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be', alt: 'Eksterior Sore' },
+    { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64', alt: 'Detail Interior' },
+    { src: 'https://images.unsplash.com/photo-1604014238170-4def1e4e6fcf', alt: 'Ruang Kerja' },
+    { src: 'https://images.unsplash.com/photo-1556909172-54557c7e4fb7', alt: 'Kamar Mandi' },
+  ];
+
+  let currentLB = 0;
+  const galGrid = document.getElementById('galGrid');
+  PHOTOS.forEach((p, i) => {
+    const url = p.src + '?auto=format&fit=crop&w=700&q=80';
+    const d = document.createElement('div');
+    d.className = 'gal-item';
+    d.innerHTML = `<img src="${url}" alt="${p.alt}" loading="lazy"><div class="gal-overlay"><div class="gal-zoom">+</div></div>`;
+    d.addEventListener('click', () => openLB(i));
+    galGrid.appendChild(d);
+  });
+
+  function openLB(i) {
+    currentLB = i;
+    const url = PHOTOS[i].src + '?auto=format&fit=crop&w=1400&q=85';
+    document.getElementById('lbImg').src = url;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLB() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function lbNav(dir) {
+    currentLB = (currentLB + dir + PHOTOS.length) % PHOTOS.length;
+    openLB(currentLB);
+  }
+
+  document.getElementById('lightbox').addEventListener('click', e => {
+    if (e.target === e.currentTarget) closeLB();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLB();
+    if (e.key === 'ArrowRight') lbNav(1);
+    if (e.key === 'ArrowLeft') lbNav(-1);
+  });
+
+  /* ── WHATSAPP ORDER ── */
+  function sendWA() {
+    const name  = document.getElementById('fName').value.trim();
+    const phone = document.getElementById('fPhone').value.trim();
+    const addr  = document.getElementById('fAddr').value.trim();
+    const rooms = document.getElementById('fRooms').value;
+    const type  = document.getElementById('fType').value;
+    const date  = document.getElementById('fDate').value;
+    const notes = document.getElementById('fNotes').value.trim();
+    const first = document.getElementById('chkFirst').checked;
+
+    if (!name || !phone || !addr) {
+      alert('Mohon lengkapi nama, nomor WhatsApp, dan alamat properti terlebih dahulu.');
+      return;
+    }
+
+    const pricePerRoom = first ? 50000 : 100000;
+    const roomNum = parseInt(rooms);
+    const totalStr = isNaN(roomNum)
+      ? 'akan dikonfirmasi'
+      : 'Rp ' + (pricePerRoom * roomNum).toLocaleString('id-ID');
+
+    const msg =
+`Halo Muskatnuss Der Photo! 📸
+
+Saya ingin memesan sesi foto properti:
+
+👤 *Nama:* ${name}
+📱 *No. WA:* ${phone}
+📍 *Alamat Properti:* ${addr}
+🏠 *Tipe Properti:* ${type}
+🚪 *Jumlah Ruangan:* ${rooms}
+📅 *Tanggal Diinginkan:* ${date || 'Fleksibel (mohon sarankan)'}
+${first ? '🎉 *Order Pertama   Promo 50% Diskon*\n📝 *Saya bersedia memberikan testimoni/review setelah menerima hasil*' : '✅ *Order Reguler*'}
+💰 *Estimasi Total:* ${totalStr}
+🚫 *Saya mengerti file RAW tidak disertakan dalam paket ini.*${notes ? `\n\n📝 *Catatan:* ${notes}` : ''}
+
+Mohon konfirmasi ketersediaan. Terima kasih!`;
+
+    window.open('https://wa.me/6282241921594?text=' + encodeURIComponent(msg), '_blank');
+  }
+  /* ── FAQ ACCORDION ── */
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  /* ── SPARK SYSTEM ── */
+  function makeParticles(container, count, opts) {
+    opts = opts || {};
+    for (let i = 0; i < count; i++) {
+      const p = document.createElement('div');
+      p.className = opts.cls || 'hero-particle';
+      if (Math.random() < 0.3) p.classList.add('diamond');
+      const size  = Math.random() * (opts.maxSize || 3) + (opts.minSize || 0.8);
+      const dur   = Math.random() * (opts.durRange || 14) + (opts.durBase || 8);
+      const delay = Math.random() * (opts.delayMax || 16);
+      const dx    = (Math.random() - 0.5) * (opts.dxRange || 100);
+      const dy    = opts.dy ? -(Math.random() * opts.dy + 40) : undefined;
+      const left  = opts.spread ? Math.random() * 100 : Math.random() * 100;
+      const bottom = opts.fromTop
+        ? undefined
+        : Math.random() * (opts.bottomRange || 45);
+      const top   = opts.fromTop ? Math.random() * 80 : undefined;
+      let css = `width:${size}px;height:${size}px;left:${left}%;`;
+      css += bottom !== undefined ? `bottom:${bottom}%;` : `top:${top}%;`;
+      css += `--dx:${dx}px;`;
+      if (dy !== undefined) css += `--dy:${dy}px;`;
+      css += `animation-duration:${dur}s;animation-delay:-${delay}s;`;
+      p.style.cssText = css;
+      container.appendChild(p);
+    }
+  }
+
+  function makeTwinkles(container, count) {
+    for (let i = 0; i < count; i++) {
+      const t = document.createElement('div');
+      t.className = 'twinkle';
+      const dur   = Math.random() * 4 + 2.5;
+      const delay = Math.random() * 6;
+      t.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*100}%;animation-duration:${dur}s;animation-delay:-${delay}s;`;
+      container.appendChild(t);
+    }
+  }
+
+  // Hero — more sparks, mix of sizes
+  const heroP = document.getElementById('heroParticles');
+  heroP.style.cssText = 'position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1';
+  makeParticles(heroP, 38, { maxSize: 3, minSize: 0.7, durRange: 14, durBase: 9, delayMax: 18, dxRange: 110, bottomRange: 55 });
+  makeTwinkles(heroP, 14);
+
+  // About section sparks
+  const aboutP = document.getElementById('aboutSparks');
+  makeParticles(aboutP, 14, { cls: 'spark', maxSize: 2, minSize: 0.6, durRange: 18, durBase: 12, delayMax: 20, dxRange: 60, dy: 80, fromTop: true });
+
+  // Pricing section sparks
+  const pricingP = document.getElementById('pricingSparks');
+  makeParticles(pricingP, 14, { cls: 'spark', maxSize: 2, minSize: 0.6, durRange: 16, durBase: 10, delayMax: 18, dxRange: 70, dy: 80, fromTop: true });
+
+  // Process section sparks
+  const processP = document.getElementById('processSparks');
+  makeParticles(processP, 12, { cls: 'spark', maxSize: 1.8, minSize: 0.5, durRange: 14, durBase: 10, delayMax: 16, dxRange: 60, dy: 70, fromTop: true });
+
+  /* ── HDR AUTO DEMO ── */
+  (function() {
+    let autoActive = true, angle = 0, raf;
+    function step() {
+      if (!autoActive) return;
+      angle += 0.003;
+      const pct = 50 + Math.sin(angle) * 22;
+      beforePane.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+      divLine.style.left = pct + '%';
+      knob.style.left = pct + '%';
+      raf = requestAnimationFrame(step);
+    }
+    raf = requestAnimationFrame(step);
+    wrap.addEventListener('mousedown',  () => { autoActive = false; cancelAnimationFrame(raf); });
+    wrap.addEventListener('touchstart', () => { autoActive = false; cancelAnimationFrame(raf); }, { passive: true });
+  })();
+
+  /* ── HIDE FLOAT WA NEAR FOOTER ── */
+  const waFloat = document.querySelector('.wa-float');
+  const footerEl = document.querySelector('footer');
+  const footerObserver = new IntersectionObserver((entries) => {
+    waFloat.classList.toggle('hide-float', entries[0].isIntersecting);
+  }, { threshold: 0.1 });
+  footerObserver.observe(footerEl);
+
+</script>
+</body>
+</html>
